@@ -61,7 +61,7 @@ local function FartHubLoad()
 	local executorname = (pcall(getexecutorname) and getexecutorname())
 		or (pcall(identifyexecutor) and identifyexecutor())
 		or "Unknown"
-	local supportedExecutors = { AWP = true, Wave = true, ["Synapse Z"] = true, Swift = true }
+	local supportedExecutors = { AWP = true, Wave = true, ["Synapse Z"] = true, Swift = true, Delta = true }
 
 	task.spawn(function()
 		if executorname == "AWP" then
