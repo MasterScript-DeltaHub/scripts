@@ -20,54 +20,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
 
 end)
 
+Tab:CreateButton("Mozil Hub", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MozilOnTopp/MozilHub/refs/heads/main/BloxFruits"))()
+
+end)
+
+
 local Tab = Window:NewSection("Server[📊]")
 
 Tab:CreateButton("ReJoin[🔁]", function()
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ReJoin[🔁]";
+    Title = "ReJoin [🔁]";
     Text = "Loading...";
     Icon = "rbxassetid://2005276185";
     Duration = 5;
 })
-
-wait(2)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ReJoin[🔁]";
-    Text = "1/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ReJoin[🔁]";
-    Text = "2/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ReJoin[🔁]";
-    Text = "3/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ReJoin[🔁]";
-    Text = "Loading...[Finish]";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(2)
 
 game:GetService("TeleportService"):Teleport(game.PlaceId)
 
@@ -76,44 +45,8 @@ end)
 Tab:CreateButton("ServerHop LowPlayer[⏩]", function()
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ServerHop LowPlayer[⏩]";
-    Text = "Loading...";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(2)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ServerHop LowPlayer[⏩]";
-    Text = "1/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ServerHop LowPlayer[⏩]";
-    Text = "2/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "ServerHop LowPlayer[⏩]";
-    Text = "3/3";
-    Icon = "rbxassetid://2005276185";
-    Duration = 5;
-})
-
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
     Title = "[ServerHop LowPlayer[⏩]]";
-    Text = "Loading...[Finish]";
+    Text = "Loading...";
     Icon = "rbxassetid://2005276185";
     Duration = 5;
 })
