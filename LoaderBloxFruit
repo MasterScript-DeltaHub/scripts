@@ -32,6 +32,20 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/redeyeytt/bloxfruitsc
 
 end)
 
+local Tab = Window:NewSection("Main")
+
+Tab:CreateButton("Kill All NPC", function()
+
+sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+for i,d in pairs(game.Workspace:GetDescendants()) do
+    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+        d.Health = 0
+    end
+end
+
+end)
+
 local Tab = Window:NewSection("Server[📊]")
 
 Tab:CreateButton("ReJoin[🔁]", function()
