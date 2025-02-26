@@ -3,7 +3,7 @@ local Window = Library:NewWindow("Loader Scripts Blox Feuit")
 
 local Tab = Window:NewSection("Loader")
 
-Tab:CreateButton("Redz Hub [NoKey]", function()
+Tab:CreateButton("Redz Hub", function()
 
 local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
@@ -11,6 +11,12 @@ local Settings = {
 }
  
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))(Settings)
+
+end)
+
+Tab:CreateButton("Speed Hub X", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
 
 end)
 
