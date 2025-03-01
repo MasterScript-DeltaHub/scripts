@@ -29,7 +29,7 @@ local Tab = Window:MakeTab({
 }) --Making A Tab
 
 Tab:AddTextbox({
-	Name = "Key",
+	Name = "FD-P12A3L-018AV0S",
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
@@ -79,7 +79,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Copy Key",
 	Callback = function()
-      		setclipboard("Soon") --This Will Copy The Link Of The Key
+      		setclipboard("https://discord.gg/Uzvz3buRY4") --This Will Copy The Link Of The Key
   	end    
 }) 
 
