@@ -1,0 +1,28 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Loader Scripts | By ヒートデッド", HidePremium = false, IntroText = "DeltaHUB6000", SaveConfig = true, ConfigFolder = "MasterScript"})
+
+local Tab = Window:MakeTab({
+	Name = "Loader Blox Fruit Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "System",
+	Content = "Hello Thank For Use Loader Scripts ;)",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Section = Tab:AddSection({
+	Name = "LoaderBloxFruit"
+})
+
+Tab:AddButton({
+	Name = "Redz Hub [NoKey]",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+OrionLib:Init()
