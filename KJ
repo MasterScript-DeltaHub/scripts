@@ -1,7 +1,7 @@
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
-local Window = Library:NewWindow("Admin Characters")
+local Window = Library:NewWindow("Characters")
 
-local Tab = Window:NewSection("Main")
+local Tab = Window:NewSection("Admin")
 
 Tab:CreateButton("Gojo[OP]", function()
 
@@ -27,6 +27,58 @@ Tab:CreateButton("Buildrman", function()
 
 local args = {
     [1] = "Builder"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+
+end)
+
+local Tab = Window:NewSection("Normal")
+
+Tab:CreateButton("KJ", function()
+
+local args = {
+    [1] = "KJ"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+
+end)
+
+Tab:CreateButton("Jun", function()
+
+local args = {
+    [1] = "Jun"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+
+end)
+
+Tab:CreateButton("Slap Guy", function()
+
+local args = {
+    [1] = "Slap Guy"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+
+end)
+
+Tab:CreateButton("King", function()
+
+local args = {
+    [1] = "King"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+
+end)
+
+Tab:CreateButton("Stealth", function()
+
+local args = {
+    [1] = "Stealth"
 }
 
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
