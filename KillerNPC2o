@@ -1,0 +1,56 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Tab 1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddToggle({
+	Name = "Kill All NPC",
+	Default = false,
+	Callback = function(Value)
+		print("Kill All NPC Toggle: " .. tostring(Value))
+
+		-- เมื่อเปิด toggle (Value เป็น true)
+		if Value then
+			local RunService = game:GetService("RunService")
+			
+			-- ฟังก์ชั่นฆ่า NPC
+			local function killNPCs()
+				for _, npc in pairs(workspace:GetChildren()) do
+					if npc:IsA("Model") and npc:FindFirstChild("Humanoid") then
+						-- เช็คว่า NPC มี Humanoid
+						local humanoid = npc:FindFirstChild("Humanoid")
+						if humanoid then
+							humanoid.Health = 0  -- กำหนดให้ NPC ตาย
+						end
+					end
+				end
+			end
+
+			-- การทำงานในทุกๆ เฟรม (Heartbeat) เมื่อเปิด toggle
+			local connection
+			connection = RunService.Heartbeat:Connect(function()
+				killNPCs()  -- เรียกฟังก์ชั่นฆ่า NPC
+			end)
+
+			-- เก็บ connection เพื่อสามารถหยุดได้เมื่อปิด toggle
+			Tab:AddToggle({
+				Name = "Stop Kill All NPC",
+				Default = false,
+				Callback = function(stop)
+					if stop then
+						connection:Disconnect()  -- หยุดการเชื่อมต่อเมื่อปิด toggle
+					end
+				end
+			})
+		else
+			-- ถ้าปิด toggle จะหยุดฆ่า NPC
+			-- ทำการเชื่อมต่อใหม่หรือหยุดฟังก์ชั่นต่างๆ ได้ที่นี่
+		end
+	end    
+})
+
+OrionLib:Init()
