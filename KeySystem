@@ -1,99 +1,107 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))() --This Will Load The Script Code
-local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
-  local Window = OrionLib:MakeWindow({
-		Name = "Key System",
-		HidePremium = false,
-		SaveConfig = true,
-		ConfigFolder = "KeySystem",
-        IntroText = "Loading Script..."       
-}) --This Will Load The Script Hub
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/Orion/main/source"))()
+local Player = game.Players.LocalPlayer
 
+-- สร้างหน้าต่างหลัก
+local Window = OrionLib:MakeWindow({
+    Name = "Key System",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "KeySystem",
+    IntroText = "Loading Script..."
+})
+
+-- ฟังก์ชันโหลดสคริปต์เมื่อใส่ Key ถูกต้อง
 function MakeScriptHub()
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/LoaderScripts"))() --Put The Script That Will Load If The Key Is Correct Here
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/LoaderScripts"))()
 end
 
+-- แจ้งเตือนเมื่อเข้าใช้งาน
 OrionLib:MakeNotification({
-	Name = "Logged In!",
-	Content = "You need key "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-}) --Notification
+    Name = "Welcome!",
+    Content = "Hello, "..Player.Name.."! Please enter the key.",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
 
-getgenv().Key = "abc" --Put The Correct Key Here
-getgenv().KeyInput = "string" --Require For The Key To Work
+-- กำหนดค่า Key
+getgenv().Key = "abc" -- Key ที่ถูกต้อง
+getgenv().KeyInput = "" -- ค่าที่ผู้ใช้จะป้อน
 
-local Tab = Window:MakeTab({
-	Name = "Key System",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-}) --Making A Tab
+-- สร้างแท็บ Key System
+local KeyTab = Window:MakeTab({
+    Name = "🔑 Key System",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-Tab:AddTextbox({
-	Name = "FD-P12A3L-018AV0S",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		getgenv().KeyInput = Value
-	end	  
-}) --You Will Enter The Key Here
+KeyTab:AddTextbox({
+    Name = "Enter Key Here",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(Value)
+        getgenv().KeyInput = Value
+    end
+})
 
-Tab:AddButton({
-    Name = "Check Key",
+KeyTab:AddButton({
+    Name = "🔍 Check Key",
     Callback = function()
+        OrionLib:MakeNotification({
+            Name = "Checking Key",
+            Content = "Verifying the key you entered...",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+        wait(2)
+
         if getgenv().KeyInput == getgenv().Key then
             OrionLib:MakeNotification({
-                Name = "Checking Key",
-                Content = "Checking The Key You Entered",
+                Name = "✅ Success!",
+                Content = "Key Verified! Access Granted.",
                 Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
-            OrionLib:MakeNotification({
-                Name = "Correct Key!",
-                Content = "The key you entered is Correct.",
-                Image = "rbxassetid://4483345998",
-                Time = 5
+                Time = 3
             })
             wait(1)
             OrionLib:Destroy()
-            wait(.3)
+            wait(0.5)
             MakeScriptHub()
         else
-           OrionLib:MakeNotification({
-                Name = "Checking Key",
-                Content = "Checking The Key You Entered",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            wait(2)
             OrionLib:MakeNotification({
-                Name = "Incorrect Key!",
-                Content = "The key you entered is incorrect.",
+                Name = "❌ Error",
+                Content = "Invalid Key! Please try again.",
                 Image = "rbxassetid://4483345998",
-                Time = 5
+                Time = 3
             })
         end
     end
-}) --This Will Check The Key You Entered
-
-Tab:AddButton({
-	Name = "Copy Key",
-	Callback = function()
-      		setclipboard("https://discord.gg/Uzvz3buRY4") --This Will Copy The Link Of The Key
-  	end    
-}) 
-
-local Tab = Window:MakeTab({
-	Name = "Setting",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-}))
-
-Tab:AddButton({
-	Name = "Destroy",
-	Callback = function()
-      	OrionLib:Destroy()
-  	end    
 })
-    
+
+KeyTab:AddButton({
+    Name = "📋 Copy Key Link",
+    Callback = function()
+        setclipboard("https://discord.gg/Uzvz3buRY4")
+        OrionLib:MakeNotification({
+            Name = "Copied!",
+            Content = "Key link copied to clipboard.",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+    end
+})
+
+-- สร้างแท็บ Settings
+local SettingsTab = Window:MakeTab({
+    Name = "⚙️ Settings",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+SettingsTab:AddButton({
+    Name = "🛑 Close UI",
+    Callback = function()
+        OrionLib:Destroy()
+    end
+})
+
+-- เริ่มต้น UI
 OrionLib:Init()
