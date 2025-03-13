@@ -1,59 +1,73 @@
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local toggleEnabled = false -- ตัวแปรสำหรับตรวจสอบสถานะของ Toggle
+local running = false -- ตัวแปรสำหรับตรวจสอบว่ากำลังทำงานอยู่หรือไม่
 
 local Window = Library:NewWindow("Bound Test")
-
 local Tab = Window:NewSection("Main")
 
-Tab:CreateToggle("Auto Store", function(value)
-    toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
+-- ฟังก์ชันค้นหาไอเท็มที่ใกล้ที่สุด
+local function findClosestItem()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local hrp = character:FindFirstChild("HumanoidRootPart")
 
-    if toggleEnabled then
-        print("✅ เปิดใช้งานระบบเก็บของอัตโนมัติ")
+    if not hrp then
+        warn("❌ ไม่พบ HumanoidRootPart!")
+        return nil
+    end
 
-        -- ค้นหาและเก็บของที่อยู่ใกล้ที่สุด
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-        local hrp = character:FindFirstChild("HumanoidRootPart")
+    local itemsFolder = workspace:FindFirstChild("RuntimeItems")
+    if not itemsFolder then
+        warn("❌ ไม่พบโฟลเดอร์ RuntimeItems!")
+        return nil
+    end
 
-        if not hrp then
-            warn("❌ ไม่พบ HumanoidRootPart!")
-            return
-        end
+    local closestItem = nil
+    local shortestDistance = 10 -- กำหนดค่าระยะห่างเริ่มต้น
 
-        local itemsFolder = workspace:FindFirstChild("RuntimeItems")
-        if not itemsFolder then
-            warn("❌ ไม่พบโฟลเดอร์ RuntimeItems!")
-            return
-        end
-
-        local closestItem = nil
-        local shortestDistance = 10 -- กำหนดค่าระยะห่างเริ่มต้นให้มากที่สุด
-
-        for _, item in ipairs(itemsFolder:GetChildren()) do
-            if item:IsA("Model") or item:IsA("Part") then
-                local itemPosition = item.Position or (item.PrimaryPart and item.PrimaryPart.Position)
-
-                if itemPosition then
-                    local distance = (hrp.Position - itemPosition).Magnitude
-                    if distance < shortestDistance then
-                        shortestDistance = distance
-                        closestItem = item
-                    end
+    for _, item in ipairs(itemsFolder:GetChildren()) do
+        if item:IsA("Model") or item:IsA("Part") then
+            local itemPosition = item.Position or (item.PrimaryPart and item.PrimaryPart.Position)
+            if itemPosition then
+                local distance = (hrp.Position - itemPosition).Magnitude
+                if distance < shortestDistance then
+                    shortestDistance = distance
+                    closestItem = item
                 end
             end
         end
+    end
 
-        if closestItem then
-            game:GetService("ReplicatedStorage").Remotes.StoreItem:FireServer(closestItem)
-            print("✅ ส่งไอเท็มที่ใกล้ที่สุด:", closestItem.Name)
+    return closestItem
+end
+
+-- ฟังก์ชันเก็บไอเท็มอัตโนมัติ
+local function autoStoreItems()
+    while toggleEnabled do
+        local item = findClosestItem()
+        if item then
+            game:GetService("ReplicatedStorage").Remotes.StoreItem:FireServer(item)
+            print("✅ ส่งไอเท็มที่ใกล้ที่สุด:", item.Name)
         else
             warn("❌ ไม่พบไอเท็มที่สามารถเก็บได้!")
         end
+        wait(1) -- หน่วงเวลาป้องกันการส่งคำสั่งมากเกินไป
+    end
+    running = false
+end
+
+-- Toggle สำหรับเปิด-ปิด Auto Store
+Tab:CreateToggle("Auto Store", function(value)
+    toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
+
+    if toggleEnabled and not running then
+        running = true
+        print("✅ เปิดใช้งานระบบเก็บของอัตโนมัติ")
+        autoStoreItems()
     else
         print("❌ ปิดระบบเก็บของอัตโนมัติ")
     end
 end)
 
-local Tab = Window:NewSection("YT: DeltaXHUB")
+local Tab2 = Window:NewSection("YT: DeltaXHUB")
