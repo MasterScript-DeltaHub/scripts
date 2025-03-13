@@ -6,7 +6,7 @@ local loopRunning = false -- ตัวแปรสำหรับตรวจส
 
 local Tab = Window:NewSection("Lucky Blocks")
 
-Tab:CreateToggle("Spawn Lucky Block (Loop)", function(value)
+Tab:CreateToggle("Get All Items", function(value)
     toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
 
     if toggleEnabled then
@@ -17,7 +17,7 @@ Tab:CreateToggle("Spawn Lucky Block (Loop)", function(value)
         loopRunning = true
         while loopRunning do
             game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer() -- ส่งคำสั่งให้ Spawn Lucky Block
-            wait(1) -- รอ 1 วินาที ก่อนจะ Spawn ใหม่
+            wait(0.00000000000000000000000001) -- รอ 1 วินาที ก่อนจะ Spawn ใหม่
         end
     else
         -- ถ้า Toggle ปิดใช้งาน (value เป็น false)
