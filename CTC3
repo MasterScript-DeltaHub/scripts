@@ -1,0 +1,33 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/turtle"))()
+local OwO = library:Window("Cheat Tap")
+
+local dropdown = OwO:Dropdown("DropDown", {"Legendary", "Epic", "Uncommon", "Common"}, function(selectedOption)
+   -- Send the selected option (e.g., "Legendary", "Epic", etc.)
+   local args = {
+      [1] = selectedOption
+   }
+   
+   -- Trigger the event with the selected option
+   game:GetService("Players").LocalPlayer.PlayerGui.SpinGui2.LOL.Spin.Spin.Reward:FireServer(unpack(args))
+end)
+
+OwO:Toggle("Example toggle", true, function(bool)
+    if bool then
+        -- Automatically set the dropdown to "Legendary" when the toggle is on
+        dropdown:Set("Legendary")  -- Assuming `Set` method is available to change dropdown value
+
+        local args = {
+            [1] = "Legendary"  -- Pass the "Legendary" option when the toggle is on
+        }
+    else
+        -- Optionally, set the dropdown to another value when the toggle is off
+        dropdown:Set("Uncommon")  -- You can choose to leave it or change it to something else
+
+        local args = {
+            [1] = "Uncommon"  -- Pass the "Uncommon" option when the toggle is off
+        }
+    end
+
+    -- Trigger the event with the selected option
+    game:GetService("Players").LocalPlayer.PlayerGui.SpinGui2.LOL.Spin.Spin.Reward:FireServer(unpack(args))
+end)
