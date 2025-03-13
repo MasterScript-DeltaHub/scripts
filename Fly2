@@ -35,10 +35,33 @@ local function toggleFly(enable)
     end
 end
 
--- Toggle สำหรับเปิด/ปิด Fly
-Tab:CreateToggle("Fly Mode", function(value)
-    flyEnabled = value
-    toggleFly(flyEnabled)
-end)
+-- สร้างปุ่มสำหรับมือถือ
+local function createMobileButton()
+    local player = game.Players.LocalPlayer
+    local playerGui = player:FindFirstChild("PlayerGui")
+
+    if not playerGui then return end
+
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Parent = playerGui
+
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 100, 0, 50)
+    button.Position = UDim2.new(0.85, 0, 0.8, 0) -- ตำแหน่งปุ่ม
+    button.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+    button.Text = "Fly: OFF"
+    button.TextScaled = true
+    button.Parent = screenGui
+
+    button.MouseButton1Click:Connect(function()
+        flyEnabled = not flyEnabled
+        toggleFly(flyEnabled)
+        button.Text = flyEnabled and "Fly: ON" or "Fly: OFF"
+        button.BackgroundColor3 = flyEnabled and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 0, 0)
+    end)
+end
+
+-- เรียกใช้ฟังก์ชันสร้างปุ่มสำหรับมือถือ
+createMobileButton()
 
 local Tab2 = Window:NewSection("YT: DeltaXHUB")
