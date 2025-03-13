@@ -1,0 +1,57 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local toggleEnabled = false -- ตัวแปรสำหรับตรวจสอบสถานะของ Toggle
+
+local Window = Library:NewWindow("Bound Test")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateToggle("Auto Store", function(value)
+    toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
+
+    if toggleEnabled then
+        print("✅ เปิดใช้งานระบบเก็บของอัตโนมัติ")
+
+        -- ค้นหาและเก็บของที่อยู่ใกล้ที่สุด
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local hrp = character:FindFirstChild("HumanoidRootPart")
+
+        if not hrp then
+            warn("❌ ไม่พบ HumanoidRootPart!")
+            return
+        end
+
+        local itemsFolder = workspace:FindFirstChild("RuntimeItems")
+        if not itemsFolder then
+            warn("❌ ไม่พบโฟลเดอร์ RuntimeItems!")
+            return
+        end
+
+        local closestItem = nil
+        local shortestDistance = math.huge -- กำหนดค่าระยะห่างเริ่มต้นให้มากที่สุด
+
+        for _, item in ipairs(itemsFolder:GetChildren()) do
+            if item:IsA("Model") or item:IsA("Part") then
+                local itemPosition = item.Position or (item.PrimaryPart and item.PrimaryPart.Position)
+
+                if itemPosition then
+                    local distance = (hrp.Position - itemPosition).Magnitude
+                    if distance < shortestDistance then
+                        shortestDistance = distance
+                        closestItem = item
+                    end
+                end
+            end
+        end
+
+        if closestItem then
+            game:GetService("ReplicatedStorage").Remotes.StoreItem:FireServer(closestItem)
+            print("✅ ส่งไอเท็มที่ใกล้ที่สุด:", closestItem.Name)
+        else
+            warn("❌ ไม่พบไอเท็มที่สามารถเก็บได้!")
+        end
+    else
+        print("❌ ปิดระบบเก็บของอัตโนมัติ")
+    end
+end)
