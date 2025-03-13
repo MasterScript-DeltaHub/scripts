@@ -1,88 +1,47 @@
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 local Window = Library:NewWindow("Characters")
 
-local Tab = Window:NewSection("Admin")
+-- ฟังก์ชันในการเปลี่ยนตัวละคร
+local function changeCharacter(characterName)
+    local args = { [1] = characterName }
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
+end
 
-Tab:CreateButton("Gojo[OP]", function()
-
-local args = {
-    [1] = "Gojo"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+-- ส่วน Admin
+local TabAdmin = Window:NewSection("Admin")
+TabAdmin:CreateButton("Gojo[OP]", function()
+    changeCharacter("Gojo")
 end)
 
-Tab:CreateButton("Admin", function()
-
-local args = {
-    [1] = "Admin"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabAdmin:CreateButton("Admin", function()
+    changeCharacter("Admin")
 end)
 
-Tab:CreateButton("Buildrman", function()
-
-local args = {
-    [1] = "Builder"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabAdmin:CreateButton("Buildrman", function()
+    changeCharacter("Builder")
 end)
 
-local Tab = Window:NewSection("Normal")
-
-Tab:CreateButton("KJ", function()
-
-local args = {
-    [1] = "KJ"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+-- ส่วน Normal
+local TabNormal = Window:NewSection("Normal")
+TabNormal:CreateButton("KJ", function()
+    changeCharacter("KJ")
 end)
 
-Tab:CreateButton("Jun", function()
-
-local args = {
-    [1] = "Jun"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabNormal:CreateButton("Jun", function()
+    changeCharacter("Jun")
 end)
 
-Tab:CreateButton("Slap Guy", function()
-
-local args = {
-    [1] = "Slap Guy"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabNormal:CreateButton("Slap Guy", function()
+    changeCharacter("Slap Guy")
 end)
 
-Tab:CreateButton("King", function()
-
-local args = {
-    [1] = "King"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabNormal:CreateButton("King", function()
+    changeCharacter("King")
 end)
 
-Tab:CreateButton("Stealth", function()
-
-local args = {
-    [1] = "Stealth"
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Change Character").ChangeCharacter:FireServer(unpack(args))
-
+TabNormal:CreateButton("Stealth", function()
+    changeCharacter("Stealth")
 end)
 
-local Tab = Window:NewSection("Credit: Delta X Hub ")
+-- ส่วน Credit
+local TabCredit = Window:NewSection("Credit: Delta X Hub")
