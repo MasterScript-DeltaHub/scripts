@@ -4,7 +4,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 -- ฟังก์ชัน Infinite Ammo
 local function infiniteAmmo()
     -- หาอาวุธ (กระสุน) ในตัวละคร
-    local gun = character:FindFirstChild("Gun") -- อาวุธชื่อว่า "Gun"
+    local gun = character:FindFirstChild("RayGun") -- อาวุธชื่อว่า "Gun"
 
     if gun then
         -- ตรวจสอบว่ามีการยิงอยู่หรือไม่
