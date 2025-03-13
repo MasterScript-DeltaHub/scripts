@@ -1,0 +1,107 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "CITY TROLLGE CONVENTIONS",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by DeltaXHUB (Thx For Use This Script)",
+   Theme = "Ocean", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+
+local Dropdown = Tab:CreateDropdown({
+   Name = "Get Cups", -- ชื่อของ Dropdown
+   Options = {"Legendary", "Epic", "Uncommon", "Common"}, -- ตัวเลือกต่างๆ ใน Dropdown
+   CurrentOption = {"Legendary"}, -- ตัวเลือกเริ่มต้น
+   MultipleOptions = false, -- เลือกได้เพียง 1 ตัวเลือก
+   Flag = "Dropdown1", -- Identifier สำหรับการบันทึกการตั้งค่า
+   Callback = function(Options)
+      -- ฟังก์ชั่นที่ทำงานเมื่อมีการเปลี่ยนแปลงตัวเลือก
+      local selectedOption = Options[1] -- เลือกตัวเลือกแรกจาก Options (เนื่องจาก MultipleOptions = false)
+
+      -- ส่งตัวเลือกที่เลือกไปให้กับ SpinGui2
+      local args = {
+         [1] = selectedOption
+      }
+
+      game:GetService("Players").LocalPlayer.PlayerGui.SpinGui2.LOL.Spin.Spin.Reward:FireServer(unpack(args))
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Teleport To Chests",
+   CurrentValue = false,  -- ค่าตั้งต้นเป็น Off
+   Flag = "TeleportToggle", -- Flag สำหรับการตั้งค่า
+   Callback = function(Value)
+      -- ฟังก์ชั่นที่ทำงานเมื่อมีการเปลี่ยนแปลงค่า Toggle
+      if Value then  -- ถ้า Toggle เป็น On
+         TeleportToChests.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+         TeleportToChests.Text = "Teleport To Chests (On)"
+
+         -- สร้าง BodyVelocity และ BodyGyro เพื่อเริ่มการเทเลพอร์ต
+         local BV = Instance.new("BodyVelocity", game.Players.LocalPlayer.Character.HumanoidRootPart)
+         local BG = Instance.new("BodyGyro", game.Players.LocalPlayer.Character.HumanoidRootPart)
+         BG.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+         BG.D = 500
+         BG.P = 50000
+         BG.CFrame = game.Workspace.CurrentCamera.CFrame
+         BV.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+         BV.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0.0000000001
+
+         _G.Teleport = true
+         while _G.Teleport == true do
+            wait(TeleportToChestsDelay.Text)
+            for i, v in pairs(game:GetService("Workspace").chests:GetChildren()) do
+               if v:IsA("BasePart") then
+                  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                  -- อัพเดทตำแหน่งของส่วนต่างๆ ในเกม (เช่น Part1, Part2 ฯลฯ)
+                  Part1.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, -3.5, 0)
+                  Part2.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-5.5, 2, 0)
+                  Part3.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(5.5, 2, 0)
+                  Part4.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 2, 5.5)
+                  Part5.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 2, -5.5)
+                  Part6.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 7.5, 0)
+                  wait(TeleportToChestsDelay.Text)
+               end
+            end
+         end
+      else  -- ถ้า Toggle เป็น Off
+         TeleportToChests.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+         TeleportToChests.Text = "Teleport To Chests (Off)"
+
+         -- หยุดการเทเลพอร์ต
+         _G.Teleport = false
+         wait(0.1)
+         game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChildOfClass("BodyVelocity"):Destroy()
+         game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChildOfClass("BodyGyro"):Destroy()
+      end
+   end,
+})
+
