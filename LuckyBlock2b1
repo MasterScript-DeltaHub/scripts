@@ -6,22 +6,38 @@ local loopRunning = false -- ตัวแปรสำหรับตรวจส
 
 local Tab = Window:NewSection("Lucky Blocks")
 
-Tab:CreateToggle("Get All Items", function(value)
+Tab:CreateToggle("Spawn Lucky Block (Loop)", function(value)
     toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
 
     if toggleEnabled then
         -- ถ้า Toggle เปิดใช้งาน (value เป็น true)
         print("✅ สั่ง Spawn Lucky Block")
         
+        -- แสดง Notification ตอนที่เริ่มการ Spawn
+        OrionLib:MakeNotification({
+            Name = "Spawn Lucky Block",
+            Content = "กำลัง Spawn Lucky Block...",
+            Image = "rbxassetid://4483345998", -- ใช้ไอคอนที่ต้องการ
+            Time = 5 -- แสดง Notification เป็นเวลา 5 วินาที
+        })
+        
         -- เริ่มการ Spawn แบบ Loop
         loopRunning = true
         while loopRunning do
             game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer() -- ส่งคำสั่งให้ Spawn Lucky Block
-            wait(0.00000000000000000000000001) -- รอ 1 วินาที ก่อนจะ Spawn ใหม่
+            wait(1) -- รอ 1 วินาที ก่อนจะ Spawn ใหม่
         end
     else
         -- ถ้า Toggle ปิดใช้งาน (value เป็น false)
         print("❌ ปิดการ Spawn Lucky Block")
+        
+        -- แสดง Notification เมื่อหยุดการ Spawn
+        OrionLib:MakeNotification({
+            Name = "Stop Spawn",
+            Content = "หยุดการ Spawn Lucky Block",
+            Image = "rbxassetid://4483345998", -- ใช้ไอคอนที่ต้องการ
+            Time = 5 -- แสดง Notification เป็นเวลา 5 วินาที
+        })
         
         -- หยุดการ Spawn แบบ Loop
         loopRunning = false
