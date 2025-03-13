@@ -1,0 +1,24 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- ฟังก์ชัน Infinite Ammo
+local function infiniteAmmo()
+    -- หาอาวุธ (กระสุน) ในตัวละคร
+    local gun = character:FindFirstChild("Gun") -- อาวุธชื่อว่า "Gun"
+
+    if gun then
+        -- ตรวจสอบว่ามีการยิงอยู่หรือไม่
+        if gun:FindFirstChild("Ammo") then
+            -- ตั้งค่า Ammo ให้เป็นไม่จำกัด (เช่น 999999)
+            gun.Ammo.Value = 999999
+            print("✅ Infinite Ammo Enabled!")
+        else
+            warn("❌ ไม่พบค่า Ammo ในอาวุธ!")
+        end
+    else
+        warn("❌ ไม่พบอาวุธในตัวละคร!")
+    end
+end
+
+-- เรียกใช้ฟังก์ชัน Infinite Ammo
+infiniteAmmo()
