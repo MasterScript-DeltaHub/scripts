@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local flyEnabled = false
+local flySpeed = 50
+local bodyVelocity = nil
+
+local Window = Library:NewWindow("Fly System")
+local Tab = Window:NewSection("Main")
+
+-- ฟังก์ชันเปิด/ปิด Fly
+local function toggleFly(enable)
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local hrp = character:FindFirstChild("HumanoidRootPart")
+
+    if not hrp then
+        warn("❌ ไม่พบ HumanoidRootPart!")
+        return
+    end
+
+    if enable then
+        -- สร้าง BodyVelocity เพื่อทำให้บินได้
+        bodyVelocity = Instance.new("BodyVelocity")
+        bodyVelocity.Velocity = Vector3.new(0, flySpeed, 0)
+        bodyVelocity.MaxForce = Vector3.new(4000, 4000, 4000)
+        bodyVelocity.Parent = hrp
+        print("✅ เปิดใช้งาน Fly")
+    else
+        -- ลบ BodyVelocity เพื่อหยุดบิน
+        if bodyVelocity then
+            bodyVelocity:Destroy()
+            bodyVelocity = nil
+        end
+        print("❌ ปิดการใช้งาน Fly")
+    end
+end
+
+-- Toggle สำหรับเปิด/ปิด Fly
+Tab:CreateToggle("Fly Mode", function(value)
+    flyEnabled = value
+    toggleFly(flyEnabled)
+end)
+
+local Tab2 = Window:NewSection("YT: DeltaXHUB")
