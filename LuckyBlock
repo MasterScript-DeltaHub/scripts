@@ -1,0 +1,19 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Lucky Block")
+
+local toggleEnabled = false -- ตัวแปรสำหรับตรวจสอบสถานะ Toggle
+
+local Tab = Window:NewSection("Lucky Blocks")
+
+Tab:CreateToggle("Spawn Lucky Block", function(value)
+    toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
+
+    if toggleEnabled then
+        -- ถ้า Toggle เปิดใช้งาน (value เป็น true)
+        print("✅ สั่ง Spawn Lucky Block")
+        game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer() -- ส่งคำสั่งให้ Spawn Lucky Block
+    else
+        -- ถ้า Toggle ปิดใช้งาน (value เป็น false)
+        print("❌ ปิดการ Spawn Lucky Block")
+    end
+end)
