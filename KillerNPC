@@ -1,0 +1,33 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("KillerGUI")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateToggle("Kill All NPC", function(value)
+    print("Kill All NPC Toggle: " .. tostring(value))
+    
+    -- เมื่อ Toggle เปิด (value เป็น true) จะเริ่มทำการฆ่า NPC ทุกตัวในลูป
+    if value then
+        while true do
+            -- ค้นหา NPC ทั้งหมดในเกม
+            for _, npc in pairs(workspace:GetChildren()) do
+                if npc:IsA("Model") and npc:FindFirstChild("Humanoid") then
+                    -- เช็คว่า NPC มี Humanoid (ทำให้สามารถฆ่าได้)
+                    local humanoid = npc:FindFirstChild("Humanoid")
+                    if humanoid then
+                        humanoid.Health = 0  -- กำหนดให้ NPC ตาย
+                    end
+                end
+            end
+            wait(1)  -- ลูปนี้จะทำงานทุก 1 วินาที
+        end
+    else
+        -- เมื่อ Toggle ปิด (value เป็น false) จะหยุดลูป
+        -- ลบลูปที่ทำงานอยู่
+        for _, connection in pairs(getconnections(game:GetService("RunService").Heartbeat)) do
+            connection:Disable()  -- หยุดลูป
+        end
+    end
+end)
+
+local Tab2 = Window:NewSection("YT: DeltaXHUB")
