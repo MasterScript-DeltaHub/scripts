@@ -2,18 +2,28 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 local Window = Library:NewWindow("Lucky Block")
 
 local toggleEnabled = false -- ตัวแปรสำหรับตรวจสอบสถานะ Toggle
+local loopRunning = false -- ตัวแปรสำหรับตรวจสอบสถานะของ loop
 
 local Tab = Window:NewSection("Lucky Blocks")
 
-Tab:CreateToggle("Spawn Lucky Block", function(value)
+Tab:CreateToggle("Spawn Lucky Block (Loop)", function(value)
     toggleEnabled = value -- กำหนดค่าตัวแปรตาม Toggle
 
     if toggleEnabled then
         -- ถ้า Toggle เปิดใช้งาน (value เป็น true)
         print("✅ สั่ง Spawn Lucky Block")
-        game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer() -- ส่งคำสั่งให้ Spawn Lucky Block
+        
+        -- เริ่มการ Spawn แบบ Loop
+        loopRunning = true
+        while loopRunning do
+            game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer() -- ส่งคำสั่งให้ Spawn Lucky Block
+            wait(1) -- รอ 1 วินาที ก่อนจะ Spawn ใหม่
+        end
     else
         -- ถ้า Toggle ปิดใช้งาน (value เป็น false)
         print("❌ ปิดการ Spawn Lucky Block")
+        
+        -- หยุดการ Spawn แบบ Loop
+        loopRunning = false
     end
 end)
