@@ -29,7 +29,7 @@ Tab:CreateToggle("Auto Store", function(value)
         end
 
         local closestItem = nil
-        local shortestDistance = math.huge -- กำหนดค่าระยะห่างเริ่มต้นให้มากที่สุด
+        local shortestDistance = 10 -- กำหนดค่าระยะห่างเริ่มต้นให้มากที่สุด
 
         for _, item in ipairs(itemsFolder:GetChildren()) do
             if item:IsA("Model") or item:IsA("Part") then
