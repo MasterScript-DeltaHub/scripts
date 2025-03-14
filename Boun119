@@ -1,0 +1,19 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Name")
+
+local Tab = Window:NewSection("My Tab")
+
+-- ดึงข้อมูลผู้เล่น
+local player = game.Players.LocalPlayer
+local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
+
+-- สร้าง TextBox เพื่อให้ผู้ใช้พิมพ์ค่า Wins ใหม่
+Tab:CreateTextbox("Enter Wins", function(text)
+    local newWins = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
+    if newWins then
+        wins.Value = newWins -- เปลี่ยนค่าชนะของผู้เล่น
+        print("Wins set to:", newWins)
+    else
+        print("Invalid input! Please enter a number.")
+    end
+end)
