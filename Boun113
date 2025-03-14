@@ -1,0 +1,20 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Name")
+
+local Tab = Window:NewSection("My Tab")
+
+-- ดึงข้อมูลผู้เล่น
+local player = game.Players.LocalPlayer
+local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
+
+-- สร้าง TextBox และอัปเดตค่า Wins
+Tab:CreateTextbox("TextBox", function(text)
+    print("User input:", text)
+end).Text = tostring(wins.Value)
+
+-- อัปเดตค่าอัตโนมัติเมื่อ Wins เปลี่ยนแปลง
+wins.Changed:Connect(function(newValue)
+    Tab:CreateTextbox("TextBox", function(text)
+        print("User input:", text)
+    end).Text = tostring(newValue)
+end)
