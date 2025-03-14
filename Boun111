@@ -8,13 +8,11 @@ local player = game.Players.LocalPlayer
 local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
 
 -- สร้าง TextBox และอัปเดตค่า Wins
-Tab:CreateTextbox("TextBox", function(text)
+local textBox = Tab:CreateTextbox("Wins: " .. tostring(wins.Value), function(text)
     print("User input:", text)
-end).Text = tostring(wins.Value)
+end)
 
 -- อัปเดตค่าอัตโนมัติเมื่อ Wins เปลี่ยนแปลง
 wins.Changed:Connect(function(newValue)
-    Tab:CreateTextbox("TextBox", function(text)
-        print("User input:", text)
-    end).Text = tostring(newValue)
+    textBox.Text = "Wins: " .. tostring(newValue)
 end)
