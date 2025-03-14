@@ -7,12 +7,26 @@ local Tab = Window:NewSection("My Tab")
 local player = game.Players.LocalPlayer
 local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
 
+local player = game.Players.LocalPlayer
+local bond = player:WaitForChild("PlayerGui"):WaitForChild("BondGui"):WaitForChild("BondInfo"):WaitForChild("Bond")
+
 -- สร้าง TextBox เพื่อให้ผู้ใช้พิมพ์ค่า Wins ใหม่
 Tab:CreateTextbox("Enter Wins", function(text)
     local newWins = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
     if newWins then
         wins.Value = newWins -- เปลี่ยนค่าชนะของผู้เล่น
         print("Wins set to:", newWins)
+    else
+        print("Invalid input! Please enter a number.")
+    end
+end)
+
+-- สร้าง TextBox ให้ผู้เล่นสามารถกำหนดค่า Bond ได้
+Tab:CreateTextbox("Enter Bond", function(text)
+    local newBond = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
+    if newBond then
+        bond.Value = newBond -- เปลี่ยนค่า Bond ของผู้เล่น
+        print("Bond set to:", newBond)
     else
         print("Invalid input! Please enter a number.")
     end
