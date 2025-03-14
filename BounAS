@@ -6,6 +6,7 @@ local Tab = Window:NewSection("My Tab")
 -- ดึงข้อมูลผู้เล่น
 local player = game.Players.LocalPlayer
 local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
+local m = player:WaitForChild("leaderstats"):WaitForChild("Money")
 
 -- สร้าง TextBox เพื่อให้ผู้ใช้พิมพ์ค่า Wins ใหม่
 Tab:CreateTextbox("Enter Wins", function(text)
@@ -13,6 +14,16 @@ Tab:CreateTextbox("Enter Wins", function(text)
     if newWins then
         wins.Value = newWins -- เปลี่ยนค่าชนะของผู้เล่น
         print("Wins set to:", newWins)
+    else
+        print("Invalid input! Please enter a number.")
+    end
+end)
+
+Tab:CreateTextbox("Enter Money", function(text)
+    local newMoney = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
+    if newMoney then
+        m.Value = newMoney -- เปลี่ยนค่าชนะของผู้เล่น
+        print("Money set to:", newMoney)
     else
         print("Invalid input! Please enter a number.")
     end
