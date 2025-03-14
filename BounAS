@@ -19,8 +19,6 @@ Tab:CreateTextbox("Enter Wins", function(text)
     end
 end)
 
-local Tab = Window:NewSection("My Tab 2")
-
 Tab:CreateTextbox("Enter Cash", function(text)
     local newMoney = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
     if newMoney then
