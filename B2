@@ -1,0 +1,22 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Name")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateTextbox("Entry Money", function(text)
+
+        game.Players.LocalPlayer.leaderstats.Money.Value=(text)
+
+end)
+
+Tab:CreateTextbox("Entry Win", function(text)
+
+        game.Players.LocalPlayer.leaderstats.Wins.Value=(text)
+
+end)
+
+Tab:CreateTextbox("TextBox", function(text)
+
+        game.Players.LocalPlayer.PlayerGui.BondGui.BondInfo.Bond=(text)
+
+end)
