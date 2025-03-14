@@ -1,13 +1,13 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 local Window = Library:NewWindow("Dead Rails OP")
 
-local Tab = Window:NewSection("Main")
-
 -- ดึงข้อมูลผู้เล่น
 local player = game.Players.LocalPlayer
 local leaderstats = player:WaitForChild("leaderstats")
 local wins = leaderstats:WaitForChild("Wins")
 local money = leaderstats:WaitForChild("Money") -- เพิ่มตัวแปร Money
+
+local Tab = Window:NewSection("Main")
 
 -- สร้าง TextBox เพื่อให้ผู้ใช้พิมพ์ค่า Wins ใหม่
 Tab:CreateTextbox("Enter Wins", function(text)
