@@ -1,0 +1,25 @@
+local a=loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local b=a:CreateWindow({Name="🔥 ECBPloiters Script Hub | Dead Rails 🔫",LoadingTitle="🔫 Dead Rails 💥",LoadingSubtitle="by ECBPloiters",ConfigurationSaving={Enabled=false,FolderName=nil,FileName="Example Hub"},Discord={Enabled=false,Invite="noinvitelink",RememberJoins=true},KeySystem=true,KeySettings={Title="Key | KrBCPloiters Hub",Subtitle="Key System",Note="Key Link Youtube Description",FileName="Rsd2309x1sxa",SaveKey=false,GrabKeyFromSite=true,Key={"https://pastebin.com/raw/KMqN70VP"}}})
+local c=b:CreateTab("🏠 Home",nil)
+local d=c:CreateSection("Main")
+a:Notify({Title="DEAD RAILS EXECUTED LETS GO",Content="VERY INDEED",Duration=5,Image=13047715178,Actions={Ignore={Name="Okay!",Callback=function()print("The user tapped Okay!")end}},})
+local e=c:CreateButton({Name="Infinite Jump Toggle",Callback=function()
+_G.f=not _G.f
+if _G.g==nil then
+_G.g=true
+game.StarterGui:SetCore("SendNotification",{Title="Youtube Hub";Text="Infinite Jump Activated!";Duration=5;})
+local h=game:GetService('Players').LocalPlayer
+local i=h:GetMouse()
+i.KeyDown:connect(function(j)if _G.f then if j:byte()==32 then k=game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')k:ChangeState('Jumping')wait()k:ChangeState('Seated')end end end)end end,})
+local l=c:CreateSlider({Name="WalkSpeed Slider",Range={1,350},Increment=1,Suffix="Speed",CurrentValue=16,Flag="sliderws",Callback=function(m)game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=(m)end,})
+local n=c:CreateDropdown({Name="Teleport House Loot",Options={"Gunsmith","Sheriff","Doctor","Town"},CurrentOption={"Gunsmith"},MultipleOptions=false,Flag="dropdownarea",Callback=function(o)print(o)end,})
+local p=c:CreateInput({Name="Cash",PlaceholderText="1-9999",RemoveTextAfterFocusLost=true,Callback=function(q)game.Players.LocalPlayer.leaderstats.Money.Value=(q)end,})
+local r=c:CreateInput({Name="Wins",PlaceholderText="1-9999",RemoveTextAfterFocusLost=true,Callback=function(s)game.Players.LocalPlayer.leaderstats.Wins.Value=(s)end,})
+local t=c:CreateInput({Name="Bonds",PlaceholderText="1-9999",RemoveTextAfterFocusLost=true,Callback=function(u)game.Players.LocalPlayer.PlayerGui.BondGui.BondInfo.Bond=(u)end,})
+local v=c:CreateSection("Other")
+local w=c:CreateToggle({Name="Auto Farm Bonds",CurrentValue=false,Flag="Toggle1",Callback=function(x)print("FARMING")end,})
+local y=b:CreateTab("🏝 ESP",nil)
+local z=y:CreateButton({Name="Starter Island",Callback=function()end,})
+local A=y:CreateButton({Name="Pirate Island",Callback=function()end,})
+local B=y:CreateButton({Name="Pineapple Paradise",Callback=function()end,})
+local C=b:CreateTab("🎲 Misc",nil)
