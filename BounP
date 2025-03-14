@@ -1,3 +1,4 @@
+if 116495829188952 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 local Window = Library:NewWindow("Dead Rails Give")
 
@@ -6,7 +7,6 @@ local Tab = Window:NewSection("Lobby")
 -- ดึงข้อมูลผู้เล่น
 local player = game.Players.LocalPlayer
 local wins = player:WaitForChild("leaderstats"):WaitForChild("Wins")
-local cash = player:WaitForChild("leaderstats"):WaitForChild("Money")
 
 -- สร้าง TextBox เพื่อให้ผู้ใช้พิมพ์ค่า Wins ใหม่
 Tab:CreateTextbox("Enter Wins", function(text)
@@ -18,6 +18,14 @@ Tab:CreateTextbox("Enter Wins", function(text)
         print("Invalid input! Please enter a number.")
     end
 end)
+
+local Window = Library:NewWindow("Dead Rails Give")
+
+local Tab = Window:NewSection("In Game")
+
+-- ดึงข้อมูลผู้เล่น
+local player = game.Players.LocalPlayer
+local cash = player:WaitForChild("leaderstats"):WaitForChild("Money")
 
 Tab:CreateTextbox("Enter Cash", function(text)
     local newMoney = tonumber(text) -- แปลงข้อความที่พิมพ์เป็นตัวเลข
