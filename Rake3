@@ -1,0 +1,18 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Name")
+
+local Tab = Window:NewSection("My Tab")
+
+Tab:CreateButton("TheRake Script1", function()
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9ccd19089cb4d74bd2ac8902fb910027.lua"))()
+
+end)
+
+Tab:CreateButton("TheRake Script2", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/TheRake"))()
+
+end)
+
+local Tab = Window:NewSection("My Tab")
