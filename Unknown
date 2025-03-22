@@ -1,0 +1,17 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Unknown Battle Simulator")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateButton("Get", function()
+
+if game.CreatorType == Enum.CreatorType.User then
+game.Players.LocalPlayer.UserId = game.CreatorId
+end
+if game.CreatorType == Enum.CreatorType.Group then
+game.Players.LocalPlayer.UserId = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Id
+end
+
+end)
+
+local Tab = Window:NewSection("YT: DeltaXHUB")
