@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 local noclipEnabled = false
-local ownerUserId = 7293304000
+local ownerUserId = 4812684103
 local TeleportService = game:GetService("TeleportService")
 local PlaceId = game.PlaceId
 local HttpService = game:GetService("HttpService")
