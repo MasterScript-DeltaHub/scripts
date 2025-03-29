@@ -40,7 +40,7 @@ RunService.Stepped:Connect(function()
     end
 end)
 
-Tab:CreateButton("Button2 (Toggle NoClip)", function()
+Tab:CreateButton("Noclip V2", function()
     toggleNoclip()
     sendNotification("NoClip Status", "NoClip is now " .. (noclipEnabled and "Enabled" or "Disabled"), 4)
 end)
