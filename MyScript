@@ -1,0 +1,46 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Dead Rails [Alpha]")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateButton("Aimbot NPC", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/Aimbot%20NPC"))()
+end)
+
+local player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local noclipEnabled = false
+
+local function sendNotification(title, text, duration)
+    pcall(function()
+        game.StarterGui:SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = duration or 4
+        })
+    end)
+end
+
+local function toggleNoclip()
+    noclipEnabled = not noclipEnabled
+    for _, part in pairs(player.Character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.CanCollide = not noclipEnabled
+        end
+    end
+end
+
+RunService.Stepped:Connect(function()
+    if noclipEnabled and player.Character then
+        for _, part in pairs(player.Character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    end
+end)
+
+Tab:CreateButton("Button2 (Toggle NoClip)", function()
+    toggleNoclip()
+    sendNotification("NoClip Status", "NoClip is now " .. (noclipEnabled and "Enabled" or "Disabled"), 4)
+end)
