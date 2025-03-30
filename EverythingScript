@@ -37,7 +37,14 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("My Script", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("My Script (1)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Abilly War Tower Defense",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/spawntower"))()
+   end,
+})
 
 local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 
