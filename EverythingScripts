@@ -43,7 +43,7 @@ local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~
 local Section = Tab:CreateSection("Hello Everyone, Thank For Use this scripts")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 21")
+local Section = Tab:CreateSection("Scripts Has: 22")
 local Section = Tab:CreateSection("Updated: 10:08 PM 3/30/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
@@ -139,6 +139,15 @@ local Button = Tab:CreateButton({
    Name = "Dead Rails [Thai Script]",
    Callback = function()
    loadstring(game:HttpGet("https://zuwz.xyz/Somtank-DR.lua"))()
+   end,
+})
+
+local Tab = Window:CreateTab("Forsaken (1)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "souyanen HUB",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/souyanen/gamescripts/refs/heads/main/Forsaken.lua"))
    end,
 })
 
