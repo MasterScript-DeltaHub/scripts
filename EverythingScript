@@ -37,22 +37,13 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("My Script (1)", 4483362458) -- Title, Image
-
-local Button = Tab:CreateButton({
-   Name = "Abilly War Tower Defense",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/spawntower"))()
-   end,
-})
-
 local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("Hello Everyone, Thank For Use this scripts")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 9")
+local Section = Tab:CreateSection("Scripts Has: 10")
 local Section = Tab:CreateSection("Updated: N/A")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
@@ -64,6 +55,15 @@ local Section = Tab:CreateSection("- Fluxus")
 local Section = Tab:CreateSection("- Wave")
 local Section = Tab:CreateSection("- Arceus X")
 local Section = Tab:CreateSection("And Other Executor...")
+
+local Tab = Window:CreateTab("My Script (1)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Abilly War Tower Defense",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/spawntower"))()
+   end,
+})
 
 local Tab = Window:CreateTab("Blox Fruit (9)", 4483362458) -- Title, Image
 
