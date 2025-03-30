@@ -115,7 +115,7 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Just3itx HUB"
+   Name = "Just3itx HUB",
    Callback = function()
    loadstring(game:HttpGet('https://raw.githubusercontent.com/Just3itx/Lunor-Loadstrings/refs/heads/main/Loader'))()
    end,
