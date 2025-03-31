@@ -37,6 +37,13 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+Rayfield:Notify({
+   Title = "System",
+   Content = "Testing Script...",
+   Duration = 6.5,
+   Image = 4483362458,
+})
+
 local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
