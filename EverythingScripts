@@ -37,15 +37,23 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+Rayfield:Notify({
+   Title = "System",
+   Content = "this is a Version Aplha has Bug or Can't Execte Something [I Sorry]",
+   Duration = 6.5,
+   Image = 4483362458,
+})
+
 local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("Hello Everyone, Thank For Use this scripts")
+local Section = Tab:CreateSection("This Script Remake From (Universal Script)")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
-local Section = Tab:CreateSection("Version: 0.0.3 [Alpha]")
+local Section = Tab:CreateSection("Version: 0.0.4 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 40")
-local Section = Tab:CreateSection("Updated: 2:26 PM 3/31/2025")
+local Section = Tab:CreateSection("Scripts Has: 42")
+local Section = Tab:CreateSection("Updated: 1:35 AM 4/1/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("- Solara")
@@ -355,5 +363,21 @@ local Button = Tab:CreateButton({
    Name = "Neuron-XYZ Hub",
    Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Neuron-XYZ/refs/heads/main/Source/Pressure.lua"))()
+   end,
+})
+
+local Tab = Window:CreateTab("The Rake (2)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "N/A [Unknow]",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9ccd19089cb4d74bd2ac8902fb910027.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Toddy's hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/TheRake"),true))()
    end,
 })
