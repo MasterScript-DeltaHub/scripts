@@ -42,9 +42,9 @@ local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("Hello Everyone, Thank For Use this scripts")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
-local Section = Tab:CreateSection("Version: 0.0.1 [Alpha]")
+local Section = Tab:CreateSection("Version: 0.0.3 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 38")
+local Section = Tab:CreateSection("Scripts Has: 40")
 local Section = Tab:CreateSection("Updated: 2:26 PM 3/31/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
@@ -67,10 +67,8 @@ local Button = Tab:CreateButton({
 })
 
 local Tab = Window:CreateTab("FE", 4483362458) -- Title, Image
-local Tab = Window:CreateTab("Kaito Fyp (N/A)", 4483362458) -- Title, Image
-local Tab = Window:CreateTab("Tora isme (N/A)", 4483362458) -- Title, Image
 
-local Tab = Window:CreateTab("Dead Rails (12)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Dead Rails (14)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
    Name = "Speed X HUB",
@@ -129,7 +127,7 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Just3itx HUB",
+   Name = "Lunor HUB",
    Callback = function()
    loadstring(game:HttpGet('https://raw.githubusercontent.com/Just3itx/Lunor-Loadstrings/refs/heads/main/Loader'))()
    end,
@@ -153,6 +151,20 @@ local Button = Tab:CreateButton({
    Name = "Dead Rails [Thai Script]",
    Callback = function()
    loadstring(game:HttpGet("https://zuwz.xyz/Somtank-DR.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Skull Hub",
+   Callback = function()
+   loadstring(game:HttpGet('https://skullhub.xyz/loader.lua'))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Go to End Ui",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/TwoGunVolley/FixedPlease/refs/heads/main/Protected_7197551640341824.txt"))()
    end,
 })
 
