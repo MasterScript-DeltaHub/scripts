@@ -362,7 +362,7 @@ local Button = Tab:CreateButton({
 local Tab = Window:CreateTab("The Rake (2)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
-   Name = "N/A [Unknow]",
+   Name = "GGEz",
    Callback = function()
    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9ccd19089cb4d74bd2ac8902fb910027.lua"))()
    end,
@@ -371,6 +371,6 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Toddy's hub",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/TheRake"),true))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/TheRake"))()
    end,
 })
