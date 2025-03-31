@@ -37,13 +37,6 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-Rayfield:Notify({
-   Title = "System",
-   Content = "this is a Version Aplha has Bug or Can't Execte Something [I Sorry]",
-   Duration = 6.5,
-   Image = 4483362458,
-})
-
 local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
