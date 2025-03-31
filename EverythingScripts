@@ -57,6 +57,8 @@ local Section = Tab:CreateSection("- Wave")
 local Section = Tab:CreateSection("- Arceus X")
 local Section = Tab:CreateSection("And Other Executor...")
 
+local Tab = Window:CreateTab("Other", 4483362458) -- Title, Image
+
 local Tab = Window:CreateTab("Kaito Fyp (N/A)", 4483362458) -- Title, Image
 local Tab = Window:CreateTab("Tora isme (N/A)", 4483362458) -- Title, Image
 
