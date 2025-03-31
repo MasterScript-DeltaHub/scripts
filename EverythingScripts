@@ -4,7 +4,7 @@
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Everything Scripts [Alpha]",
+   Name = "Everything Scripts [Moblie/PC][Alpha]",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Loading",
    LoadingSubtitle = "by Delta X HUB",
@@ -42,9 +42,10 @@ local Tab = Window:CreateTab("Info", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("Hello Everyone, Thank For Use this scripts")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
+local Section = Tab:CreateSection("Version: 0.0.1 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 22")
-local Section = Tab:CreateSection("Updated: 10:08 PM 3/30/2025")
+local Section = Tab:CreateSection("Scripts Has: 38")
+local Section = Tab:CreateSection("Updated: 2:26 PM 3/31/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("- Solara")
@@ -55,6 +56,9 @@ local Section = Tab:CreateSection("- Fluxus")
 local Section = Tab:CreateSection("- Wave")
 local Section = Tab:CreateSection("- Arceus X")
 local Section = Tab:CreateSection("And Other Executor...")
+
+local Tab = Window:CreateTab("Kaito Fyp (N/A)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Tora isme (N/A)", 4483362458) -- Title, Image
 
 local Tab = Window:CreateTab("Dead Rails (12)", 4483362458) -- Title, Image
 
@@ -142,12 +146,31 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Tab = Window:CreateTab("Forsaken (1)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Forsaken (3)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
-   Name = "souyanen HUB",
+   Name = "Souyanen HUB",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/souyanen/gamescripts/refs/heads/main/Forsaken.lua"))
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Apple HUB",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/welomenchaina/Loader/refs/heads/main/ScriptLoader",true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Fart HUB",
+   Callback = function()
+   if getgenv then
+    getgenv().DebugNotifications = "false"
+    getgenv().TrackMePlease = "true"
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua"))()
    end,
 })
 
@@ -221,5 +244,94 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Tab = Window:CreateTab("Slap Battles (0)", 4483362458) -- Title, Image
-local Tab = Window:CreateTab("Tsb (0)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Fisch (6)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Speed X Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Space Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://you.whimper.xyz/sources/rb/fisch.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Ronix Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loadrs/4464ac74577954a78a6c2fec9b3492.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "homohack",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/dementiaenjoyer/homohack/main/loader.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dexzy Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Simple-xa/Fisch/main/Dexzybit.lua"))()
+   end,
+})
+
+local Tab = Window:CreateTab("Slap Battles (2)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Sans Glove [FE]",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/IncognitoScripts/SlapBattles/refs/heads/main/SansGloveFinished'))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Master Farm",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/0-BaconScripter-0/Script/refs/heads/main/Slap%20Battles/Mastery%20Farm"))()
+   end,
+})
+
+local Tab = Window:CreateTab("Doors (3)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "FFJ1 HUB",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "BlackKING HUB",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Notpoiu HUB",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/mspaint/main/main.lua"))()
+   end,
+})
+
+local Tab = Window:CreateTab("Pressure (2)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "NullFire Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Pressure-WORKING-fire-hub-18064"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Neuron-XYZ Hub",
+   Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Neuron-XYZ/refs/heads/main/Source/Pressure.lua"))()
+   end,
+})
