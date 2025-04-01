@@ -52,7 +52,7 @@ local Section = Tab:CreateSection("This Script Remake From Universal Script")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("Version: 0.0.4 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 42")
+local Section = Tab:CreateSection("Scripts Has: 41")
 local Section = Tab:CreateSection("Updated: 1:35 AM 4/1/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
@@ -85,7 +85,7 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab("FE", 4483362458) -- Title, Image
 
-local Tab = Window:CreateTab("Dead Rails (14)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Dead Rails (13)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
    Name = "Speed X HUB",
@@ -140,13 +140,6 @@ local Button = Tab:CreateButton({
    Name = "NullFire HUB",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/InfernusScripts/Null-Fire/main/Loader"))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Lunor HUB",
-   Callback = function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/Just3itx/Lunor-Loadstrings/refs/heads/main/Loader'))()
    end,
 })
 
