@@ -65,6 +65,15 @@ local Section = Tab:CreateSection("- Wave")
 local Section = Tab:CreateSection("- Arceus X")
 local Section = Tab:CreateSection("And Other Executor...")
 
+local Label = Tab:CreateLabel("Destroy UI Has Bug or Spam Execute", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = Tab:CreateButton({
+   Name = "Destroy UI",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
 local Tab = Window:CreateTab("Other", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
