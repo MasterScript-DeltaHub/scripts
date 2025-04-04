@@ -19,7 +19,7 @@ local closureConstants = {
 }
 
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
-local value = text
+local value = text,
 local elementIndex = "ammo"
 
 
