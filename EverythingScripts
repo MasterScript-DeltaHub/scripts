@@ -75,7 +75,7 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Hydroxide",
+   Name = "Hydroxide [PC]",
    Callback = function()
    local owner = "Upbolt"
 local branch = "revision"
@@ -88,6 +88,22 @@ webImport("init")
 webImport("ui/main")
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "Hydroxide [Moblie]",
+   Callback = function()
+   local owner = "Hosvile"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+   end,
+})
+
 
 local Tab = Window:CreateTab("Other", 4483362458) -- Title, Image
 
