@@ -1,0 +1,47 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Survive Area 51")
+local MainTab = Window:NewSection("Main")
+
+MainTab:CreateButton("Inf Ammo", function()
+    -- ป้องกัน error ถ้า Hydroxide ใช้ไม่ได้
+    local success, aux = pcall(function()
+        return loadstring(game:HttpGet("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+    end)
+
+    if not success then
+        warn("ไม่สามารถโหลด Hydroxide ได้")
+        return
+    end
+
+    local scriptPath = game:GetService("ReplicatedStorage"):FindFirstChild("Weapon")
+    if not scriptPath then
+        warn("ไม่พบ Weapon script")
+        return
+    end
+
+    local closureName = "Unnamed function"
+    local upvalueIndex = 1
+    local closureConstants = {
+        [1] = "mouse_down_functions",
+        [2] = "UserInputType",
+        [3] = "key_down_functions",
+        [4] = "KeyCode"
+    }
+
+    local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+    if closure then
+        local successSet = pcall(function()
+            debug.getupvalue(closure, upvalueIndex)["ammo"] = 1e24
+        end)
+
+        if successSet then
+            print("ตั้งค่า Ammo เรียบร้อย")
+        else
+            warn("ไม่สามารถตั้งค่า Ammo ได้")
+        end
+    else
+        warn("ไม่พบ closure ที่ตรงเงื่อนไข")
+    end
+end)
+
+local InfoTab = Window:NewSection("YT: Delta X Hub")
