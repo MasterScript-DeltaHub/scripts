@@ -74,6 +74,13 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Universal Other Script [Key]",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/KGuestCheatsJReal/ComeBack/refs/heads/main/Universal"))()
+   end,
+})
+
 local Tab = Window:CreateTab("Other", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
