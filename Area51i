@@ -1,0 +1,19 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Survive Area 51")
+local MainTab = Window:NewSection("Main")
+
+MainTab:CreateButton("Inf Ammo", function()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local tool = character:FindFirstChildOfClass("Tool")
+
+    if tool and tool:FindFirstChild("Ammo") then
+        -- แก้ค่า Ammo ถ้ามีใน tool
+        tool.Ammo.Value = 999999
+        print("Infinite Ammo applied.")
+    else
+        warn("ไม่พบอาวุธหรือไม่มีค่า Ammo ให้แก้")
+    end
+end)
+
+local InfoTab = Window:NewSection("YT: Delta X Hub")
