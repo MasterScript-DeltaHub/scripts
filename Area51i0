@@ -5,7 +5,7 @@ local MainTab = Window:NewSection("Main")
 MainTab:CreateButton("Inf Ammo", function()
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
-    local tool = character:FindFirstChildOfClass("Unname function")
+    local tool = character:FindFirstChildOfClass("M1911")
 
     if tool and tool:FindFirstChild("Ammo") then
         -- แก้ค่า Ammo ถ้ามีใน tool
