@@ -431,4 +431,4 @@ local Button = Tab:CreateButton({
    end,
 })
 -- https://github.com/QuorumHub1/QuorumHub
-local Label = Tab:CreateLabel("Premium Key: Unknow", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = Tab:CreateLabel("Premium Key: YmuRtefVZraPhVu3R1KAsADeK", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
