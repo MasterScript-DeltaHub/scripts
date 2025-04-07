@@ -422,3 +422,14 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/TheRake"))()
    end,
 })
+
+local Tab = Window:CreateTab("SBSD (1)", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "QuorumHub [KEY}",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/QuorumHub1/QuorumHub/refs/heads/main/SbsdAutofarmV3.txt"))()
+   end,
+})
+
+local Label = Tab:CreateLabel("Premium Key: Unknow", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
