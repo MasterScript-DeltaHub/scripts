@@ -425,10 +425,18 @@ local Button = Tab:CreateButton({
 local Tab = Window:CreateTab("SBSD (1)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
-   Name = "QuorumHub [KEY}",
+   Name = "QuorumHub - AutoFarm [KEY]",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/QuorumHub1/QuorumHub/refs/heads/main/SbsdAutofarmV3.txt"))()
    end,
 })
 -- https://github.com/QuorumHub1/QuorumHub
-local Label = Tab:CreateLabel("Premium Key: YmuRtefVZraPhVu3R1KAsADeK", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = Tab:CreateLabel("AutoFarm Premium Key: YmuRtefVZraPhVu3R1KAsADeK", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = Tab:CreateButton({
+   Name = "QuorumHub - AutoClose",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/QuorumHub1/QuorumHub/refs/heads/main/SbsdAutoclose.txt"))()
+   end,
+})
+
