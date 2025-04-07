@@ -1,7 +1,6 @@
 -- Create By  DeltaXHUB
 -- Credit ui https://docs.sirius.menu/rayfield
 
-
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Everything Scripts [Moblie/PC][Alpha]",
@@ -431,5 +430,5 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/QuorumHub1/QuorumHub/refs/heads/main/SbsdAutofarmV3.txt"))()
    end,
 })
-
+-- https://github.com/QuorumHub1/QuorumHub
 local Label = Tab:CreateLabel("Premium Key: Unknow", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
