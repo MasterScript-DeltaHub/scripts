@@ -51,9 +51,10 @@ local Section = Tab:CreateSection("This Script Remake From Universal Script")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("Version: 0.0.4 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 43")
-local Section = Tab:CreateSection("Updated: 10:13 PM 4/7/2025")
+local Section = Tab:CreateSection("Scripts Has: 44")
+local Section = Tab:CreateSection("Updated: 7:35 PM 4/11/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
+local Section = Tab:CreateSection("Upadte Script New: Add Dead Rails Script!!")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("- Solara")
 local Section = Tab:CreateSection("- Xeno")
@@ -112,7 +113,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Tab = Window:CreateTab("Other", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Other &n FE", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
    Name = "Aimbot [PC]",
@@ -121,9 +122,15 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Tab = Window:CreateTab("FE", 4483362458) -- Title, Image
+local Button = Tab:CreateButton({
+   Name = "Destroy UI",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+   end,
+})
 
-local Tab = Window:CreateTab("Dead Rails (13)", 4483362458) -- Title, Image
+
+local Tab = Window:CreateTab("Dead Rails (14)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
    Name = "Speed X HUB",
@@ -241,6 +248,13 @@ local Button = Tab:CreateButton({
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Selfware Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aca362a74eb2f7c5f383969177c26b6b.lua"))()
    end,
 })
 
