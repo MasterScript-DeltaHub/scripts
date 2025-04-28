@@ -54,7 +54,7 @@ local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~
 local Section = Tab:CreateSection("Scripts Has: 44")
 local Section = Tab:CreateSection("Updated: 7:35 PM 4/11/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
-local Section = Tab:CreateSection("Upadte Script New: Add Dead Rails Script!!")
+local Section = Tab:CreateSection("Upadte Script New: Add FE Script!!")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~~~Executor Working~~~~~~~~~~~~~~~~~~~~~~")
 local Section = Tab:CreateSection("- Solara")
 local Section = Tab:CreateSection("- Xeno")
@@ -107,7 +107,7 @@ webImport("ui/main")
 local Tab = Window:CreateTab("My Scripts[test]", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
-   Name = "Survive Area 51 Inf ammo",
+   Name = "Survive Area 51 Inf ammo (don't add the ammo many [you can add 999 - 1e24]",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/Area51t"))()
    end,
@@ -123,7 +123,7 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Destroy UI",
+   Name = "infinite yield",
    Callback = function()
    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
    end,
@@ -223,6 +223,13 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Selfware Hub",
+   Callback = function()
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aca362a74eb2f7c5f383969177c26b6b.lua"))()
+   end,
+})
+
 local Tab = Window:CreateTab("Forsaken (3)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
@@ -248,13 +255,6 @@ local Button = Tab:CreateButton({
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua"))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Selfware Hub",
-   Callback = function()
-   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aca362a74eb2f7c5f383969177c26b6b.lua"))()
    end,
 })
 
