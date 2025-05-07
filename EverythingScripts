@@ -51,7 +51,7 @@ local Section = Tab:CreateSection("This Script Remake From Universal Script")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("Version: 0.0.4 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 50")
+local Section = Tab:CreateSection("Scripts Has: 51")
 local Section = Tab:CreateSection("Updated: 10:35 PM 5/5/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("Upadte Script New: Add Tab, Script And Other..")
@@ -234,6 +234,13 @@ local Button = Tab:CreateButton({
    Name = "Selfware Hub",
    Callback = function()
    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/aca362a74eb2f7c5f383969177c26b6b.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dupe gui",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ZusumeHub/ZusumeHub/refs/heads/main/DeadRails"))()
    end,
 })
 
