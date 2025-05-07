@@ -51,7 +51,7 @@ local Section = Tab:CreateSection("This Script Remake From Universal Script")
 local Section = Tab:CreateSection("Credit By: Delta X HUB")
 local Section = Tab:CreateSection("Version: 0.0.4 [Alpha]")
 local Section = Tab:CreateSection("~~~~~~~~~~~~~~~~~~Logs~~~~~~~~~~~~~~~~~~~~~~~~")
-local Section = Tab:CreateSection("Scripts Has: 51")
+local Section = Tab:CreateSection("Scripts Has: 53")
 local Section = Tab:CreateSection("Updated: 10:35 PM 5/5/2025")
 local Section = Tab:CreateSection("Created: 3/30/2025")
 local Section = Tab:CreateSection("Upadte Script New: Add Tab, Script And Other..")
@@ -104,15 +104,6 @@ webImport("ui/main")
    end,
 })
 
-local Tab = Window:CreateTab("My Scripts[test]", 4483362458) -- Title, Image
-
-local Button = Tab:CreateButton({
-   Name = "Survive Area 51 Inf ammo (don't add the ammo many [you can add 999 - 1e24]",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/Area51t"))()
-   end,
-})
-
 local Tab = Window:CreateTab("Other &n FE", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
@@ -137,7 +128,7 @@ local Button = Tab:CreateButton({
 })
 
 
-local Tab = Window:CreateTab("Dead Rails (15)", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Dead Rails (16)", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
    Name = "Speed X HUB",
@@ -238,9 +229,9 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Native Hub [Key: OFF]",
+   Name = "Native Hub",
    Callback = function()
-   script_key="PASTEKEYHERE";
+   script_key="nil";
 (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
    end,
 })
