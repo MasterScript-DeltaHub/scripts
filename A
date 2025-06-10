@@ -1,0 +1,4 @@
+G.TargetNames = {
+	"Racoon"
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MasterScript-DeltaHub/scripts/refs/heads/main/GAG"))()
